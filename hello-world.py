@@ -2,13 +2,15 @@ import turtle
 import colorsys
 import time
 
+your_name = "Ghoochali"
+
 turtle_screen = turtle.Screen()
 turtle_screen.title("Hello World Static")
 turtle_writer = turtle.Turtle()
 turtle_writer.hideturtle()
 turtle_writer.penup()
 turtle_writer.goto(0,0)
-turtle_writer.write("Hello World", align="center", font=("Arial", 24, "normal"))
+turtle_writer.write("Hello", align="center", font=("Arial", 24, "normal"))
 time.sleep(2)  # Pause to view
 turtle_writer.clear()
 
@@ -21,8 +23,13 @@ def draw_rainbow_text(turtle_obj, text, font=("Arial", 48, "bold")):
         turtle_obj.color(colors[i % num_colors])
         turtle_obj.write(char, font=font)
         turtle_obj.forward(30)
+text = "Hello "
+if your_name == "":
+    text += "World"
+else:
+    text += your_name
 
-draw_rainbow_text(turtle_writer, "Hello World")
+draw_rainbow_text(turtle_writer, text)
 time.sleep(2)
 turtle_writer.clear()
 
@@ -36,7 +43,7 @@ def draw_rainbow_text(turtle_obj, text, font=("Arial", 48, "bold")):
         turtle_obj.write(char, font=font)
         turtle_obj.forward(30)
 
-draw_rainbow_text(turtle_writer, "Hello World")
+draw_rainbow_text(turtle_writer, text)
 time.sleep(2)
 turtle_writer.clear()
 
@@ -50,7 +57,6 @@ turtle_screen.tracer(0, 0)  # turn off animation for smooth update
 
 turtle_writer.goto(-width//2 + 20, 0)
 font_size = 48
-text = "Hello World"
 
 def get_rainbow_colors(length):
     colors = []
