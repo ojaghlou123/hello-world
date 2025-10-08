@@ -23,6 +23,7 @@ def draw_rainbow_text(turtle_obj, text, font=("Arial", 48, "bold")):
         turtle_obj.color(colors[i % num_colors])
         turtle_obj.write(char, font=font)
         turtle_obj.forward(30)
+        turtle.Screen().bgcolor(colors[(i + 3) % num_colors])  # Change background color
 text = "Hello "
 if your_name == "":
     text += "World"
